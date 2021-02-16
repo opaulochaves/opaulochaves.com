@@ -1,12 +1,12 @@
-'use strict';
 const fs = require('fs');
 const upath = require('upath');
 const pug = require('pug');
 const sh = require('shelljs');
 const prettier = require('prettier');
+const dist = 'docs/';
 
 module.exports = function renderPug(filePath) {
-    const destPath = filePath.replace(/src\/pug\//, 'dist/').replace(/\.pug$/, '.html');
+    const destPath = filePath.replace(/src\/pug\//, dist).replace(/\.pug$/, '.html');
     const srcPath = upath.resolve(upath.dirname(__filename), '../src');
 
     console.log(`### INFO: Rendering ${filePath} to ${destPath}`);

@@ -1,8 +1,5 @@
-'use strict';
-
 const _ = require('lodash');
 const chokidar = require('chokidar');
-const path = require('path');
 const renderAssets = require('./render-assets');
 const renderPug = require('./render-pug');
 const renderScripts = require('./render-scripts');
@@ -28,13 +25,13 @@ watcher.on('ready', () => {
 _handleSCSS();
 
 function _processFile(filePath, watchEvent) {
-    
+
     if (!READY) {
         if (filePath.match(/\.pug$/)) {
             if (!filePath.match(/includes/) && !filePath.match(/mixins/) && !filePath.match(/\/pug\/layouts\//)) {
                 allPugFiles[filePath] = true;
-            }    
-        }    
+            }
+        }
         process.stdout.write('.');
         return;
     }
