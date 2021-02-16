@@ -1,7 +1,7 @@
 // Styling for the navbar
 #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
     .navbar-brand {
@@ -32,8 +32,8 @@
 }
 @include media-breakpoint-up(lg) {
     #mainNav {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
         transition: padding-top 0.3s, padding-bottom 0.3s;
         .navbar-brand {
             font-size: 1.75em;
