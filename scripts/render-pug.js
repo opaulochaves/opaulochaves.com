@@ -5,6 +5,7 @@ const sh = require('shelljs');
 const prettier = require('prettier');
 const dist = 'docs/';
 
+// TODO migrate to handlebars. I don't like the pug syntax
 module.exports = function renderPug(filePath) {
     const destPath = filePath.replace(/src\/pug\//, dist).replace(/\.pug$/, '.html');
     const srcPath = upath.resolve(upath.dirname(__filename), '../src');

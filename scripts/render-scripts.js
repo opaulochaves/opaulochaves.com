@@ -10,6 +10,7 @@ module.exports = function renderScripts() {
     const destPath = upath.resolve(upath.dirname(__filename), `../${dist}/.`);
 
     sh.cp('-R', sourcePath, destPath)
+    copyCNAME(destPath);
 
     const sourcePathScriptsJS = upath.resolve(upath.dirname(__filename), '../src/js/scripts.js');
     const destPathScriptsJS = upath.resolve(upath.dirname(__filename), `../${dist}/js/scripts.js`);
@@ -24,3 +25,8 @@ module.exports = function renderScripts() {
 
     fs.writeFileSync(destPathScriptsJS, copyright + scriptsJS);
 };
+
+function copyCNAME(destPath) {
+    const srcFile = upath.resolve(upath.dirname(__filename), '../src/CNAME');
+    sh.cp(srcFile, destPath)
+}
